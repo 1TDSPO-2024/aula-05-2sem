@@ -1,25 +1,31 @@
-export default function Cabecalho({tituloProps, avisoProps}:{tituloProps:string, avisoProps: Function}) {
-  
-    document.title = tituloProps
+type CabecalhoProps = {
+    paginaProps: string;
+    nrPaginaProps: number | string;
+    statusProps: 'loading'|'deployed';
+    avisoProps: Function;
+};
 
-    const aluno = {
-        nome: "nuno",
-        idade: 11,
-        rm: 346789
-    }
+export default function Cabecalho({paginaProps,nrPaginaProps, statusProps, avisoProps} : CabecalhoProps) {
+  document.title = statusProps + '-' + nrPaginaProps;
 
-    // const{nome, idade, rm} = aluno
-    const{nome, ...resto} = aluno
+  const aluno = {
+    nome: "nuno",
+    idade: 11,
+    rm: 346789,
+  };
 
-    return (
+  // const{nome, idade, rm} = aluno
+  const { nome, ...resto } = aluno;
+
+  return (
     <header>
-      <h1>{tituloProps}</h1>
+      <h1>{paginaProps + '-' + nrPaginaProps}</h1>
       <div>
-        <button onClick={()=> avisoProps()}>Aviso do pai</button>
+        <button onClick={() => avisoProps()}>Aviso do pai</button>
         <div>
-            <p>Nome: {nome}</p>
-            <p>idade: {resto.idade}</p>
-            <p>rm: {resto.rm}</p>
+          <p>Nome: {nome}</p>
+          <p>idade: {resto.idade}</p>
+          <p>rm: {resto.rm}</p>
         </div>
       </div>
     </header>
