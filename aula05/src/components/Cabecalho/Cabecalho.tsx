@@ -1,26 +1,9 @@
-type Cabecalho1Props = {
-    paginaProps:string,
-    avisoProps:Function,
-}
-
-type Cabecalho2Props = {
-    nrPaginaProps: number | string,
-    statusProps: "loading" | "deployed" | "xuxu"
-}
+import { Cabecalho1Props } from "../../types";
+import { Cabecalho2Props } from "../../types";
 
 export default function Cabecalho(props:Cabecalho1Props & Cabecalho2Props ){
     
     document.title = props.statusProps + " - " + props.nrPaginaProps;
-
-    const aluno = {
-        nome: "Nuno",
-        idade: 11,
-        rm: "556303"
-    }
-
-    const{nome, idade, rm} = aluno;
-    // const{nome, ...resto} = aluno;
-    // para usar o resto, chama o resto.nomePropriedade
 
     return(
         <div>
@@ -29,9 +12,7 @@ export default function Cabecalho(props:Cabecalho1Props & Cabecalho2Props ){
                 <button onClick={() => props.avisoProps()}>Aviso do Pai</button>
             </div>
             <div>
-                <p>Nome: {nome}</p>
-                <p>Idade: {idade}</p>
-                <p>RM: {rm}</p>
+                {props.children}
             </div>
         </div>
     );
