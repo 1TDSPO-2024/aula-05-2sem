@@ -1,12 +1,26 @@
-export default function Cabecalho(props: { tituloProps:string, avisoProps: Function }){
+export default function Cabecalho({tituloProps, avisoProps}: { tituloProps:string, avisoProps: Function }){
 
-    document.title = props.tituloProps;
+    document.title = tituloProps;
+
+    const aluno = {
+        nome: "Marcos",
+        idade: 126, 
+        rm: 123456
+    }
+
+    const { nome, idade, rm } = aluno;
+    //const {nome, ...resto }
 
     return(
         <header>
-            <h1>{props.tituloProps}</h1>
+            <h1>{tituloProps}</h1>
             <div>
-                <button onClick={() => props.avisoProps()}>Aviso do Pai</button>
+                <button onClick={() => avisoProps()}>Aviso do Pai</button>
+            </div>
+            <div>
+                <p>Nome: {nome}</p>
+                <p>Idade: {idade}</p>
+                <p>RM: {rm}</p>
             </div>
         </header>
     )
