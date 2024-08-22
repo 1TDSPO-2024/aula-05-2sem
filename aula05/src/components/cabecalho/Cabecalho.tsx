@@ -1,6 +1,6 @@
 export default function Cabecalho({tituloProps, avisoProps}: { tituloProps: string, avisoProps: Function}) {
 
-    document.title = props.tituloProps;
+    document.title = tituloProps;
 
     const aluno = {
         nome: "Rayssa",
