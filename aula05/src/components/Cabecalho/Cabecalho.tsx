@@ -1,21 +1,18 @@
-type CabecalhoProps = {
+import { ReactNode } from "react";
+
+type CabecalhoProps1 = {
     paginaProps: string;
     nrPaginaProps: number | string;
+    children: ReactNode;
+};
+type CabecalhoProps2 = {
     statusProps: 'loading'|'deployed';
     avisoProps: Function;
 };
 
-export default function Cabecalho({paginaProps,nrPaginaProps, statusProps, avisoProps} : CabecalhoProps) {
+export default function Cabecalho({paginaProps,nrPaginaProps,children, statusProps, avisoProps} : CabecalhoProps1 & CabecalhoProps2) {
   document.title = statusProps + '-' + nrPaginaProps;
 
-  const aluno = {
-    nome: "nuno",
-    idade: 11,
-    rm: 346789,
-  };
-
-  // const{nome, idade, rm} = aluno
-  const { nome, ...resto } = aluno;
 
   return (
     <header>
@@ -23,9 +20,8 @@ export default function Cabecalho({paginaProps,nrPaginaProps, statusProps, aviso
       <div>
         <button onClick={() => avisoProps()}>Aviso do pai</button>
         <div>
-          <p>Nome: {nome}</p>
-          <p>idade: {resto.idade}</p>
-          <p>rm: {resto.rm}</p>
+            {children}
+
         </div>
       </div>
     </header>
