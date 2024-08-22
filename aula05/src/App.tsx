@@ -9,11 +9,15 @@ const aluno:object = {
     vivo: true
 }
 
+const aviso = () => {
+    alert(titulo)
+}
+
 
 export default function App() {
     return (
         <div>
-            <Cabecalho tituloProps={titulo}/>
+            <Cabecalho tituloProps={titulo} avisoProps={aviso}/>
         </div>
     )
 }
