@@ -5,11 +5,7 @@ function App() {
   const titulo: string = "Minha página"
   const numero: number = 69
   const listaName: string[] = ["yuri", "garro"]
-  const aluno = {
-    nome: "Felipe",
-    idade: 18,
-    vivo: true
-  }
+
 
   const aviso = () => alert(titulo)
   return (
