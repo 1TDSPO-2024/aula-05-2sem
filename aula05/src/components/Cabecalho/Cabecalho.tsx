@@ -1,9 +1,11 @@
-export default function Cabecalho() {
+export default function Cabecalho(props:{tituloProps:string}) {
+
+document.title = props.tituloProps
+
     return (
         <div>
             <header>
-                <h1>Component App</h1>
-                <Cabecalho />
+                <h1>{props.tituloProps}</h1>
             </header>
         </div>
     )
