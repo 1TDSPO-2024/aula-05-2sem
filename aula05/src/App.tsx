@@ -10,10 +10,12 @@ function App() {
     idade: 18,
     vivo: true
   }
+
+  const aviso = () => alert(titulo)
   return (
     <div>
       <h1>Componente App</h1>
-      <Cabecalho tituloProps={titulo} />
+      <Cabecalho tituloProps={titulo} avisoProps={aviso} />
     </div>
   )
 
