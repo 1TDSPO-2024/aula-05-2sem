@@ -1,14 +1,25 @@
-export default function Cabecalho(props: {tituloProps: string, avisoPros: Function}){
+export default function Cabecalho({tituloProps, avisoProps}: {tituloProps: string, avisoProps: Function}){
 
-    document.title = props.tituloProps
+    document.title = tituloProps
 
-    addEventListener("click", ()=>{})
+    const aluno= {
+        nome: "Nubank",
+        idade: 105,
+        rm: "45216"
+    }
+
+    const{nome,idade,rm} = aluno;
 
     return(
       <header>
-        <h1>{props.tituloProps}</h1>
+        <h1>{tituloProps}</h1>
         <div>
-            <button onClick={()=>props.avisoPros()}>Aviso do Pai</button>
+            <button onClick={()=>avisoProps()}>Aviso do Pai</button>
+        </div>
+        <div>
+            <p>Nome:{nome}</p>
+            <p>Idade:{idade}</p>
+            <p>Rm:{rm}</p>
         </div>
       </header>
     );
