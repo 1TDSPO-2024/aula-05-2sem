@@ -6,7 +6,7 @@ type CabecalhoProps = {
 export default function Cabecalho({tituloProps, avisoProps}: CabecalhoProps) {
 
     document.title = tituloProps;
-       
+
     return(
         <header>
             <h1>{tituloProps}</h1>
