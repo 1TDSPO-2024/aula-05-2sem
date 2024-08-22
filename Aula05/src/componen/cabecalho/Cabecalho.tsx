@@ -1,11 +1,16 @@
-export default function Cabecalho({tituloProps, avisoProps}: {tituloProps: string, avisoProps: Function}){
+type CabecalhoProps = {
+    tituloProps: string;
+    avisoProps: Function;
+}
+
+export default function Cabecalho({tituloProps, avisoProps}:CabecalhoProps){
 
     document.title = tituloProps
 
     const aluno= {
-        nome: "Nubank",
-        idade: 105,
-        rm: "45216"
+        nome: "Weslley",
+        idade: 19,
+        rm: "556039"
     }
 
     const{nome,idade,rm} = aluno;
@@ -19,7 +24,7 @@ export default function Cabecalho({tituloProps, avisoProps}: {tituloProps: strin
         <div>
             <p>Nome:{nome}</p>
             <p>Idade:{idade}</p>
-            <p>Rm:{rm}</p>
+            <p>RM:{rm}</p>
         </div>
       </header>
     );
