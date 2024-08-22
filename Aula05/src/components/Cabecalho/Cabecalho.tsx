@@ -1,12 +1,15 @@
-type CabecalhoProps = {
+type Cabecalho1Props = {
     paginaProps: string,
     nrPaginaProps: number | string;
-    statusProps: "loading" | "deployed";
+}
+
+type Cabecalho2Props = {
+    statusProps: "loading" | "deployed" | "xuxu";
     avisoProps: Function;
 }
 
 export default function Cabecalho({ paginaProps, nrPaginaProps, statusProps, avisoProps }:
-    CabecalhoProps) {
+    Cabecalho1Props & Cabecalho2Props) {
 
     document.title = statusProps + " - " + nrPaginaProps;
 
