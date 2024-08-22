@@ -1,4 +1,9 @@
-function Cabecalho({ tituloProps, avisoProps }: { tituloProps: string, avisoProps: Function }) {
+type CabecalhoProps = {
+    tituloProps: string,
+    avisoProps: Function
+}
+
+function Cabecalho({ tituloProps, avisoProps }: CabecalhoProps) {
 
     document.title = tituloProps
     const aluno = {
