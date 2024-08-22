@@ -1,11 +1,10 @@
 import Cabecalho from "./componentes/Cabecalho/Cabecalho";
-import Main from "./componentes/Main/Main";
-import Rodape from "./componentes/Rodape/Rodape";
+
 
 export default function App(){
 
   const pagina: string = "Página Inicial";
-  const nrPagina:number = 2;
+  const nrPagina: number = 2;
   const status = "loading"
   const aviso = ()=> alert(pagina);
   /* 
@@ -19,9 +18,21 @@ export default function App(){
   return(
     <div>
       <h1>Componente App</h1>
-      <Cabecalho paginaProps={pagina} nrPaginaProps={nrPagina} statusProps={status} avisoProps={aviso}/>
-      <Main/>
-      <Rodape/>
+      <Cabecalho 
+        paginaProps={pagina} 
+        nrPaginaProps={nrPagina} 
+        statusProps={status} 
+        avisoProps={aviso}>
+
+        <ul>
+          <li><a href="#">Aluno-1</a></li>
+          <li><a href="#">Aluno-2</a></li>
+          <li><a href="#">Aluno-3</a></li>
+          <li><a href="#">Aluno-4</a></li>
+          <li><a href="#">Aluno-5</a></li>
+          <li><a href="#">Aluno-6</a></li>
+        </ul>
+      </Cabecalho>
     </div>
   )
 }
