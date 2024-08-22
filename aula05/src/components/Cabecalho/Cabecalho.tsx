@@ -1,11 +1,13 @@
 type CabecalhoProps = {
-    tituloProps: string,
+    paginaProps: string,
+    nrPaginaProps: number | string
+    statusProps: "loading" | "deployed"
     avisoProps: Function
 }
 
-function Cabecalho({ tituloProps, avisoProps }: CabecalhoProps) {
+function Cabecalho({ paginaProps, nrPaginaProps, statusProps, avisoProps }: CabecalhoProps) {
 
-    document.title = tituloProps
+    document.title = paginaProps
     const aluno = {
         nome: "Felipe",
         idade: 18,
@@ -16,7 +18,7 @@ function Cabecalho({ tituloProps, avisoProps }: CabecalhoProps) {
 
     return (
         <header>
-            <h1>{tituloProps}</h1>
+            <h1>{paginaProps + " - " + nrPaginaProps}</h1>
             <button onClick={() => { avisoProps() }}>Aviso do Pai</button>
             <div>
                 <p>Nome: {nome}</p>
