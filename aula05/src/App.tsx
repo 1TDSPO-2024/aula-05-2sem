@@ -5,7 +5,7 @@ export default function App() {
   const nrpagina:number = 2
   const status = 'loading'
 
-  const aviso: Function = ()=> alert(pagina)
+  const aviso = ()=> alert(pagina)
   return (
     <div>
       <h1>Componente APP</h1>
